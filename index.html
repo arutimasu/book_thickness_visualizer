@@ -15,12 +15,23 @@ const context = canvas.getContext("2d");
 let y = 10
 //- Using an anonymous function:
 document.getElementById("clickMe").onclick = function () {
-    let height = prompt("Enter the book size (in pages)") / 10
+    let pages = prompt("Enter the book size (in pages)")
+    let height = pages / 10
     //context.fillRect (10, 10, 100, 100);
     context.strokeStyle =  "#964B00" //"#ff0000";     // устанавливаем цвет контура фигуры
     context.strokeRect (65, y, 100, height);
     context.font = "12px Consolas"
     context.fillText(height*10 + " pages", 0, y+5);
+    if(pages < 50){
+        context.fillStyle = "red";     // устанавливаем цвет текста
+        context.fillText("Это не книга!", 200, y+5);
+        context.fillStyle = "black"; 
+    }
+    else{
+        context.fillStyle = "green";     // устанавливаем цвет текста
+        context.fillText("Это книга.", 200, y+5);
+        context.fillStyle = "black"; 
+}
     y+=height+10;
 }
 </script>
