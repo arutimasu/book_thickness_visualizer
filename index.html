@@ -24,12 +24,12 @@ document.getElementById("clickMe").onclick = function () {
     context.fillText(height*10 + " pages", 0, y+5);
     if(pages < 50){
         context.fillStyle = "red";     // устанавливаем цвет текста
-        context.fillText("It isn't book!", 200, y+5);
+        context.fillText("This is not a book!", 200, y+5);
         context.fillStyle = "black"; 
     }
     else{
         context.fillStyle = "green";     // устанавливаем цвет текста
-        context.fillText("It's book.", 200, y+5);
+        context.fillText("This is a book.", 200, y+5);
         context.fillStyle = "black"; 
 }
     y+=height+10;
